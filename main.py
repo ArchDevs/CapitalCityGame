@@ -9,7 +9,7 @@ def play_game():
 
     for country in countries:
         capital = country_capitals[country]
-        display_question(country)
+        print(f"What is the capital of {country}?")
 
         lives_remaining = 0
         while lives_remaining < 3:
@@ -29,7 +29,7 @@ def play_game():
 
     end_time = time.time()
     time_taken = round(end_time - start_time, 2)
-    display_score(score)
+    show_score(score)
     if lives == 0:
         update_leaderboard(score, time_taken)
         display_leaderboard()
@@ -46,6 +46,9 @@ def display_leaderboard():
         leaderboard = file.readlines()
         for entry in leaderboard:
             print(entry.strip())
+
+def show_score(score):
+    print(f"Your score is: {score} \n")
 
 if __name__ == "__main__":
     while True:
