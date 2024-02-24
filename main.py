@@ -14,7 +14,7 @@ def play_game():
         lives_remaining = 0
         while lives_remaining < 3:
             user_input = input("Enter your guess: ")
-            if check_user_input(user_input, country, capital):
+            if get_user_input(user_input, country, capital):
                 score += 1
                 break
             else:
